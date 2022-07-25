@@ -236,7 +236,7 @@ func (s *Server) ServeWebsocket(conn net.Conn, rp, wp *bytes.Pool, tr *xtime.Tim
 	// handshake ok start dispatch goroutine
 	step = 5
 	go s.dispatchWebsocket(ws, wp, wb, ch)
-	serverHeartbeat := s.RandServerHearbeat()
+	serverHeartbeat := s.RandServerHeartbeat()
 	for {
 		if p, err = ch.CliProto.Set(); err != nil {
 			break

@@ -153,7 +153,7 @@ func (s *Server) ServeTCP(conn *net.TCPConn, rp, wp *bytes.Pool, tr *xtime.Timer
 	step = 3
 	// hanshake ok start dispatch goroutine
 	go s.dispatchTCP(conn, wr, wp, wb, ch)
-	serverHeartbeat := s.RandServerHearbeat()
+	serverHeartbeat := s.RandServerHeartbeat()
 	for {
 		if p, err = ch.CliProto.Set(); err != nil {
 			break
